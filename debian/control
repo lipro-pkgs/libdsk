@@ -40,8 +40,8 @@ Architecture: any
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
-Section: devel
-Description: library for accessing discs and disc image file
+Section: libdevel
+Description: library for accessing discs and disc image file (development headers)
  LibDsk contains libraries and tools for handling disc images, for example
  in emulators or to access images of vintage computers and consoles.
  .
