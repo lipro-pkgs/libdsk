@@ -1,3 +1,8 @@
+debian/index.html
+doc/apridisk.html
+doc/cfi.html
 doc/html/libdsk.html
 doc/libdsk.pdf
 doc/libdsk.txt
+doc/protocol.txt
+doc/qrst.html

@@ -7,8 +7,8 @@ Abstract: LibDsk is a library intended to give transparent access to floppy
 Section: Emulators
 
 Format: HTML
-Index: /usr/share/doc/libdsk4/libdsk.html
-Files: /usr/share/doc/libdsk4/libdsk.html
+Index: /usr/share/doc/libdsk4/index.html
+Files: /usr/share/doc/libdsk4/*.html
 
 Format: PDF
 Files: /usr/share/doc/libdsk4/libdsk.pdf
