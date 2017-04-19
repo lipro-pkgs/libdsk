@@ -10,6 +10,7 @@ Build-Depends:
  elyxer,
  texlive-extra-utils,
  ghostscript,
+ dh-exec,
 Standards-Version: 3.9.8
 Homepage: http://www.seasip.info/Unix/LibDsk/
 Vcs-Git: https://anonscm.debian.org/git/collab-maint/libdsk.git
