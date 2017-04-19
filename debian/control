@@ -1,0 +1,35 @@
+Source: libdsk
+Section: utils
+Priority: optional
+Maintainer: Dominik George <nik@naturalnet.de>
+Build-Depends:
+ debhelper (>= 10),
+Standards-Version: 3.9.8
+Homepage: http://www.seasip.info/Unix/LibDsk/
+Vcs-Git: https://anonscm.debian.org/git/collab-maint/libdsk.git
+Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/libdsk.git
+
+Package: libdsk
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: library for accessing discs and disc image file
+ LibDsk contains libraries and tools for handling disc images, for example
+ in emulators or to access images of vintage computers and consoles.
+ .
+ It has support for the following disc types:
+ .
+ - Raw files (including /dev/fdn).
+ - Raw files, rearranged into logical filesystem order.
+ - .DSK files, as used in CPCEMU, JOYCE and other Sinclair/Amstrad emulators.
+ - MYZ80 hard drive image files.
+ - NanoWasp floppy image files.
+ - .CFI (Compressed Floppy Image) files, as created by FDCOPY.COM under DOS.
+ - CopyQM files
+ - TeleDisk files
+ - Compaq QRST files
+ - APRIDISK image files
+ - The LDBS format
+ .
+ LibDsk also ships the stand-alone tools dsktrans, dskform, dskid.
