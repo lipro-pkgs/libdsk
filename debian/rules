@@ -13,3 +13,6 @@ override_dh_auto_build:
 
 override_dh_installdocs:
 	dh_installdocs --link-doc=libdsk4
+
+override_dh_compress:
+	dh_compress -X.pdf -X.txt -X.html -X.css
