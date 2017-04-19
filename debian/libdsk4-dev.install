@@ -1,4 +1,4 @@
 #! /usr/bin/dh-exec
-debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/libdsk.a usr/lib
-debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/libdsk.so usr/lib
+debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/libdsk.a usr/lib/${DEB_HOST_MULTIARCH}/
+debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/libdsk.so usr/lib/${DEB_HOST_MULTIARCH}/
 debian/tmp/usr/include/libdsk.h usr/include
