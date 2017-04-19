@@ -1,7 +1,8 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: LibDsk
 Source: http://www.seasip.info/Unix/LibDsk/
-Files-Excluded: dos16ppd
+Files-Excluded: config
+ dos16ppd
  dos32gcc
  win16bc5
  win16vc1
