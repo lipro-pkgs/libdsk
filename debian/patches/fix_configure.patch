@@ -1,3 +1,5 @@
+From: Thorsten Glaser <tg@mirbsd.org>
+Subject: Declare package non-GNU.
 --- a/configure.ac
 +++ b/configure.ac
 @@ -7,7 +7,7 @@ AC_CONFIG_MACRO_DIR(m4)

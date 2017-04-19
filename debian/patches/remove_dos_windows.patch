@@ -1,3 +1,5 @@
+From: Dominik George <nik@naturalnet.de>
+Subject: Remove dependency on DOS and Windows stuff.
 --- a/Makefile.am
 +++ b/Makefile.am
 @@ -6,40 +6,12 @@ ACLOCAL_AMFLAGS=-I m4
