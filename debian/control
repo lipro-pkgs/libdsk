@@ -4,13 +4,13 @@ Priority: optional
 Maintainer: Dominik George <nik@naturalnet.de>
 Build-Depends:
  debhelper (>= 10),
- lyx,
- texlive-latex-recommended,
- texlive-fonts-recommended,
- elyxer,
- texlive-extra-utils,
- ghostscript,
  dh-exec,
+ elyxer,
+ ghostscript,
+ lyx,
+ texlive-extra-utils,
+ texlive-fonts-recommended,
+ texlive-latex-recommended,
 Standards-Version: 3.9.8
 Homepage: http://www.seasip.info/Unix/LibDsk/
 Vcs-Git: https://anonscm.debian.org/git/collab-maint/libdsk.git
