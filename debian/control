@@ -1,5 +1,5 @@
 Source: libdsk
-Section: utils
+Section: libs
 Priority: optional
 Maintainer: Dominik George <nik@naturalnet.de>
 Build-Depends:
@@ -21,7 +21,6 @@ Architecture: any
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
-Section: libs
 Description: library for accessing discs and disc image file
  LibDsk contains libraries and tools for handling disc images, for example
  in emulators or to access images of vintage computers and consoles.
@@ -73,6 +72,7 @@ Architecture: any
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
+Section: utils
 Description: library for accessing discs and disc image file (utilities)
  LibDsk contains libraries and tools for handling disc images, for example
  in emulators or to access images of vintage computers and consoles.
