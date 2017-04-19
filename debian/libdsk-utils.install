@@ -1,5 +1,4 @@
 debian/tmp/usr/bin/apriboot usr/bin
-debian/tmp/usr/bin/dskconv usr/bin
 debian/tmp/usr/bin/dskdump usr/bin
 debian/tmp/usr/bin/dskform usr/bin
 debian/tmp/usr/bin/dskid usr/bin

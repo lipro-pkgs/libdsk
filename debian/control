@@ -91,4 +91,5 @@ Description: library for accessing discs and disc image file (utilities)
   - APRIDISK image files
   - The LDBS format
  .
- This package contains the stand-alone utilities dsktrans, dskform and dskid.
+ This package contains stand-alone utilities to handle disk images on the
+ command line.
