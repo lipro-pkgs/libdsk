@@ -5,7 +5,9 @@ Maintainer: Dominik George <nik@naturalnet.de>
 Build-Depends:
  debhelper (>= 10),
  lyx,
- texlive-latex-base,
+ texlive-latex-recommended,
+ texlive-fonts-recommended,
+ elyxer,
  texlive-extra-utils,
  ghostscript,
 Standards-Version: 3.9.8
