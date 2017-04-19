@@ -1,0 +1,2 @@
+# upstream does not sign tarballs
+libdsk source: debian-watch-may-check-gpg-signature
