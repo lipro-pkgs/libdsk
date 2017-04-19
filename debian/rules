@@ -9,7 +9,7 @@ override_dh_auto_build:
 	dh_auto_build
 	cd doc; HOME=/tmp lyx --export pdf libdsk.lyx
 	cd doc; HOME=/tmp lyx --export text libdsk.lyx
-	cd doc; HOME=/tmp lyx --export html libdsk.lyx; mv libdsk.html.* libdsk.html
+	cd doc; HOME=/tmp lyx --export html libdsk.lyx; mv libdsk.html.* html
 
 override_dh_installdocs:
 	dh_installdocs --link-doc=libdsk4

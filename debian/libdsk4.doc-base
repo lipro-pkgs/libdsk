@@ -1,0 +1,17 @@
+Document: libdsk
+Title: LibDsk v1.5.4
+Author: John Elliott
+Abstract: LibDsk is a library intended to give transparent access to floppy
+ drives and to the “disc image files” used by emulators to
+ represent floppy drives.
+Section: 
+
+Format: HTML
+Index: /usr/share/doc/libdsk4/html/libdsk.html
+Files: /usr/share/doc/libdsk4/html/*
+
+Format: PDF
+Files: /usr/share/doc/libdsk4/libdsk.pdf
+
+Format: Text
+Files: /usr/share/doc/libdsk4/libdsk.txt
