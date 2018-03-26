@@ -9,6 +9,7 @@ Section: Emulators
 Format: HTML
 Index: /usr/share/doc/libdsk4/index.html
 Files: /usr/share/doc/libdsk4/*.html
+ /usr/share/doc/libdsk4/*.xhtml
 
 Format: PDF
 Files: /usr/share/doc/libdsk4/libdsk.pdf

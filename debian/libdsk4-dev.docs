@@ -2,7 +2,7 @@ LDBS/ldbs.html
 debian/index.html
 doc/apridisk.html
 doc/cfi.html
-doc/html/libdsk.html
+doc/libdsk.xhtml
 doc/libdsk.pdf
 doc/libdsk.txt
 doc/protocol.txt
