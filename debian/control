@@ -65,7 +65,7 @@ Description: library for accessing discs and disc image file (development header
   - APRIDISK image files
   - The LDBS format
  .
- This package contains the development headers.
+ This package contains the development headers and documentation.
 
 Package: libdsk-utils
 Architecture: any
