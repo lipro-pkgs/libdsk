@@ -3,7 +3,7 @@ Section: libs
 Priority: optional
 Maintainer: Dominik George <natureshadow@debian.org>
 Build-Depends:
- debhelper (>= 10),
+ debhelper (>= 11),
  dh-exec,
  elyxer,
  ghostscript,
@@ -11,7 +11,7 @@ Build-Depends:
  texlive-extra-utils,
  texlive-fonts-recommended,
  texlive-latex-recommended,
-Standards-Version: 3.9.8
+Standards-Version: 4.1.1
 Homepage: http://www.seasip.info/Unix/LibDsk/
 Vcs-Git: https://salsa.debian.org/debian/libdsk.git
 Vcs-Browser: https://salsa.debian.org/debian/libdsk
