@@ -16,3 +16,13 @@ Subject: Declare package non-GNU.
  
  dnl Support for the Java Native Interface bindings
  AC_ARG_WITH(jni,
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -1,6 +1,6 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-SUBDIRS= . include lib tools man doc
++SUBDIRS= . include lib tools man
+ ACLOCAL_AMFLAGS=-I m4
+ 
+ EXTRA_DIST= $(srcdir)/config/* \
