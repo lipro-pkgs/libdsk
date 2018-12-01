@@ -13,6 +13,9 @@ override_dh_auto_build:
 	cd doc; HOME=/tmp lyx --export text libdsk.lyx
 	cd doc; HOME=/tmp lyx --export xhtml libdsk.lyx
 
+	# Strip metadata fro mPDF for reproducibility
+	cd doc; exiftool -all:all= libdsk.pdf
+
 override_dh_installdocs:
 	dh_installdocs --link-doc=libdsk4
 

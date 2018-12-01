@@ -5,6 +5,7 @@ Maintainer: Dominik George <natureshadow@debian.org>
 Build-Depends:
  debhelper (>= 11),
  dh-exec,
+ exiftool,
  ghostscript,
  lyx,
  texlive-extra-utils,
