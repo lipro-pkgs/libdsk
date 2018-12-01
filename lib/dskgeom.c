@@ -393,9 +393,6 @@ dsk_err_t dsk_defgetgeom(DSK_DRIVER *self, DSK_GEOMETRY *geom)
 		dsk_free(secbuf);
 		return e; 
 	}
-
-	/* Save the data rate, because what we have is right, and what's
-	 * in the sector might not be. */
 	oldrate = geom->dg_datarate;	
 	/* We have the sector. Let's try to guess what it is */
 	e = dg_dosgeom(geom, secbuf);	
@@ -424,15 +421,35 @@ dsk_err_t dsk_defgetgeom(DSK_DRIVER *self, DSK_GEOMETRY *geom)
 		if (e == DSK_ERR_OK)
 			set_cpm86_fs(self, geom, secbuf);
 	}
-/* Check for Oups Discovery 1 */
+/* Check for Opus Discovery 1 */
 	if (e == DSK_ERR_BADFMT) 
 	{
 		e = dg_opusgeom(geom, secbuf);
 /*		if (e == DSK_ERR_OK)
 			set_opus_fs(self, geom, secbuf); */
 	}
-	geom->dg_datarate = oldrate;
-	
+	/* [1.5.6] If we are reading a floppy, LDBS file, DSK file or 
+	 * anything with metadata, then the data rate used to read the
+	 * boot sector will be the correct one. If, however, we are reading 
+	 * something like a POSIX file with no metadata, then the read will
+	 * have succeeded with the default RATE_SD and the rate specified by
+	 * the boot sector is a better indication of the proper value.
+	 *
+	 * So, try rereading the boot sector using the rate determined from
+	 * the boot sector. If that succeeds, all well and good. If not, 
+	 * revert to the rate when the boot sector was initially read */
+	if (oldrate != geom->dg_datarate)
+	{
+		dsk_err_t err2;
+
+		/* Try to reread the sector. */
+		err2 = dsk_lread(self, geom, secbuf, 0);
+		/* If that failed, revert. */
+		if (err2 == DSK_ERR_NOADDR)
+		{
+			geom->dg_datarate = oldrate;
+		}
+	}	
 	dsk_free(secbuf);
 	return e;
 }

@@ -65,11 +65,12 @@
     &dc_tele,	/* Teledisk */
 #endif
     &dc_ldbsdisk, /* LibDsk block store */
+    &dc_sap,	/* Thomson SAP */
     &dc_qrst,	/* Compaq Quick Release Sector Transfer */
     &dc_imd,	/* IMAGEDISK IMD */
 /*  &dc_dskf,	   IBM LoadDskF */
     &dc_ydsk,	/* YAZE YDSK */
-
+   
 /* 4. Raw files with no magic number. */
     &dc_posixalt,
     &dc_posixoo,

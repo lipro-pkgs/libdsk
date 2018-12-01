@@ -1,4 +1,4 @@
-LibDsk v1.5.4
+LibDsk v1.5.9-pre
 
 John Elliott
 
@@ -206,6 +206,8 @@ formats:
 • Disc images created by the Sydex imaging programs Teledisk and 
   CopyQM (Not supported in the 16-bit Windows version).
 
+• SAP disc images used in emulation of Thomson computers.
+
 • The floppy drive under Linux; 
 
 • The floppy drive under Windows. Windows support is a 
@@ -240,6 +242,19 @@ of drivers which make their changes in memory and don't try to
 commit them until dsk_close() is called.
 
 For full details, see the file ChangeLog.
+
+• dskform can now format disc images with a blank PCDOS or 
+  Apricot MSDOS filesystem.
+
+• Added a new 'sap' driver for SAP-format disc images (thanks to 
+  Emulix75 for information).
+
+• When converting to Teledisk TD0 format, attempt to come up with 
+  a plausible value for the drive type (3.5” / 5.25”).
+
+• The geometry probe has been amended to try and get the correct 
+  data rate on disc images that don't include this information as 
+  metadata.
 
 • The 'dsk' / 'edsk' driver has been rewritten to support the 
   extensions described at 

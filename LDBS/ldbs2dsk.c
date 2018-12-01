@@ -133,6 +133,8 @@ dsk_err_t migrate_track(PLDBS infile, FILE *fpo, int cyl, int head)
 	if (ldbs_track->count > 29)
 	{
 		tilen = (ldbs_track->count * 8) + 0x18;
+		/* Round up to a multiple of 256 bytes */
+		tilen = (tilen + 255) & (~255);
 	}
 /* Write the Track-Info block */
 	if (fwrite(trackinfo, 1, tilen, fpo) < tilen) 

@@ -24,6 +24,7 @@
  * access to a flat file with the tracks laid out in the SIDES_ALT order */
 
 #include <stdio.h>
+#include <assert.h>
 #include "libdsk.h"
 #include "drvi.h"
 #include "ldbs.h"
@@ -215,11 +216,11 @@ dsk_err_t posix_close(DSK_DRIVER *self)
 }
 
 
-long posix_offset(POSIX_DSK_DRIVER *pxself, const DSK_GEOMETRY *geom,
+unsigned long posix_offset(POSIX_DSK_DRIVER *pxself, const DSK_GEOMETRY *geom,
 			dsk_pcyl_t cylinder, dsk_phead_t head, 
 			dsk_psect_t sector)
 {
-	long offset = 0;
+	unsigned long offset = 0;
 
 	/* Work out the offset based on the sidedness of the disk image
 	 * (not the sidedness of the geometry) */
@@ -255,7 +256,7 @@ dsk_err_t posix_read(DSK_DRIVER *self, const DSK_GEOMETRY *geom,
                               dsk_phead_t head, dsk_psect_t sector)
 {
 	POSIX_DSK_DRIVER *pxself;
-	long offset;
+	unsigned long offset;
 
 	if (!buf || !self || !geom) return DSK_ERR_BADPTR;
 	CHECK_CLASS(self);
@@ -305,6 +306,8 @@ dsk_err_t posix_write(DSK_DRIVER *self, const DSK_GEOMETRY *geom,
 
 	if (!pxself->px_fp) return DSK_ERR_NOTRDY;
 	if (pxself->px_readonly) return DSK_ERR_RDONLY;
+	if (sector < geom->dg_secbase || sector >= geom->dg_secbase + geom->dg_sectors)
+		return DSK_ERR_NOADDR;
 
 	offset = posix_offset(pxself, geom, cylinder, head, sector);
 
@@ -354,7 +357,7 @@ dsk_err_t posix_format(DSK_DRIVER *self, DSK_GEOMETRY *geom,
 	if (pxself->px_filesize < offset + trklen)
 		pxself->px_filesize = offset + trklen;
 
-	while (trklen--) 
+	for (++trklen; trklen > 1; trklen--)
 		if (fputc(filler, pxself->px_fp) == EOF) return DSK_ERR_SYSERR;	
 
 	return DSK_ERR_OK;

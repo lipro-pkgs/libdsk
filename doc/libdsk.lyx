@@ -70,7 +70,7 @@
 \begin_body
 
 \begin_layout Title
-LibDsk v1.5.4
+LibDsk v1.5.9-pre
 \end_layout
 
 \begin_layout Author
@@ -197,6 +197,10 @@ Disc images created by the Sydex imaging programs Teledisk and CopyQM (Not
 \end_layout
 
 \begin_layout Itemize
+SAP disc images used in emulation of Thomson computers.
+\end_layout
+
+\begin_layout Itemize
 The floppy drive under Linux; 
 \end_layout
 
@@ -263,6 +267,34 @@ If you have coded against a version of LibDsk prior to 1.5.3, bear in mind
 
 \begin_layout Standard
 For full details, see the file ChangeLog.
+\end_layout
+
+\begin_layout Itemize
+dskform can now format disc images with a blank PCDOS or Apricot MSDOS filesyste
+m.
+\end_layout
+
+\begin_layout Itemize
+Added a new 'sap' driver for SAP-format disc images (thanks to Emulix75
+ for information).
+\end_layout
+
+\begin_layout Itemize
+When converting to Teledisk TD0 format, attempt to come up with a plausible
+ value for the drive type (3.5
+\begin_inset Quotes erd
+\end_inset
+
+ / 5.25
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+The geometry probe has been amended to try and get the correct data rate
+ on disc images that don't include this information as metadata.
 \end_layout
 
 \begin_layout Itemize
