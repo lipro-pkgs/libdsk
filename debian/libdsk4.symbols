@@ -54,6 +54,7 @@ libdsk.so.4 libdsk4 #MINVER#
  dc_qrst@Base 1.5.4+dfsg
  dc_rcpmfs@Base 1.5.4+dfsg
  dc_remote@Base 1.5.4+dfsg
+ dc_sap@Base 1.5.9+dfsg
  dc_simh@Base 1.5.4+dfsg
  dc_tele@Base 1.5.4+dfsg
  dc_ydsk@Base 1.5.4+dfsg
@@ -371,6 +372,11 @@ libdsk.so.4 libdsk4 #MINVER#
  remote_xwrite@Base 1.5.4+dfsg
  rpc_fork@Base 1.5.4+dfsg
  rpc_termios@Base 1.5.4+dfsg
+ sap_close@Base 1.5.9+dfsg
+ sap_crc@Base 1.5.9+dfsg
+ sap_creat@Base 1.5.9+dfsg
+ sap_getgeom@Base 1.5.9+dfsg
+ sap_open@Base 1.5.9+dfsg
  simh_close@Base 1.5.4+dfsg
  simh_creat@Base 1.5.4+dfsg
  simh_format@Base 1.5.4+dfsg
