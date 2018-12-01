@@ -1,7 +1,7 @@
 libdsk (1.5.9+dfsg-1) unstable; urgency=medium
 
   * New upstream version.
-    + Adds suppor tfor SAP format.
+    + Adds support for SAP format.
       + Update symbols file for that.
   * Bump Standards-Version (no changes needed).
   * Mark libdsk4 Multi-Arch: same.
