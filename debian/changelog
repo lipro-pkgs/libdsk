@@ -5,6 +5,7 @@ libdsk (1.5.9+dfsg-1) unstable; urgency=medium
       + Update symbols file for that.
   * Bump Standards-Version (no changes needed).
   * Mark libdsk4 Multi-Arch: same.
+  * Make build reproducible by stripping dates from PDF documentation.
 
  -- Dominik George <natureshadow@debian.org>  Sat, 01 Dec 2018 12:35:06 +0100
 
