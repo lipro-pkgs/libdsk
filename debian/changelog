@@ -1,3 +1,10 @@
+libdsk (1.5.9+dfsg-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Bump Standards-Version (no changes needed).
+
+ -- Dominik George <natureshadow@debian.org>  Sat, 01 Dec 2018 12:35:06 +0100
+
 libdsk (1.5.4+dfsg-1) unstable; urgency=low
 
   * Initial release (Closes: #168591)
