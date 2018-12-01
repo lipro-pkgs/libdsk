@@ -43,6 +43,7 @@ extern DRV_CLASS dc_ydsk;	/* YAZE YDSK driver */
 extern DRV_CLASS dc_simh;	/* SIMH Altair driver */
 extern DRV_CLASS dc_logical;	/* Raw, in logical sector order */
 extern DRV_CLASS dc_ldbsdisk;	/* LibDsk block store */
+extern DRV_CLASS dc_sap;	/* Thomson SAP */
 extern DRV_CLASS dc_rcpmfs;	/* Reverse-CP/MFS driver */
 extern DRV_CLASS dc_remote;	/* All remote drivers */
 #ifdef LINUXFLOPPY

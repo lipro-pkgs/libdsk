@@ -1,3 +1,54 @@
+2018-09-18 John Elliott
+
+	* libdsk-1.5.9 released.
+
+	* Fixed compilation issue on recent glibc (Steven Fosdick).
+
+	* dskform: Added -pcdos and -apricot options to create FAT12 
+	 filesystems.
+
+2018-04-09 John Elliott
+
+	* SAP: New disk image format implemented (Thanks to Emulix75).
+
+2018-02-06 John Elliott
+
+	* libdsk-1.5.8 released.
+
+	* Teledisk driver: Drive type guesser had types 1 and 2 (5.25" 48tpi 
+	 and 96tpi) round the wrong way.
+
+2018-01-31 John Elliott
+
+	* libdsk-1.5.7 released.
+
+	* Teledisk driver: Improved drive type guesser to cope with FM 
+	 recording, sector sizes other than 512, extended-surface format 
+	 discs.
+
+2018-01-26 John Elliott
+
+	* libdsk-1.5.6 released.
+
+	* Teledisk driver: Make a stab at guessing the drive type when
+	 converting a disk image to Teledisk format.
+
+2018-01-10 John Elliott
+
+	* Geometry probe: Change the behaviour so that dsk_getgeometry()
+	 on a raw-format disc image of a DOS 1.4M disc comes up with 
+	 the correct data rate.
+
+2017-10-29 John Elliott
+
+	* libsk-1.5.5 released.
+
+	* POSIX: Integer underflow when formatting a track, causing a 
+		 file of infinite size to be written. 
+
+	* POSIX: Sanity-check sector numbers passed to the driver, 
+		 for another integer underflow.
+
 2017-03-14 John Elliott
 
 	* DSK: Rewritten to support Simon Owen's 'Offset-Info' extension. 

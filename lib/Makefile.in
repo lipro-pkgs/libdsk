@@ -145,8 +145,8 @@ am_libdsk_la_OBJECTS = dskread.lo dskwrite.lo dskcheck.lo dskstat.lo \
 	drvjv3.lo drvlinux.lo drvntwdm.lo drvwin32.lo drvwin16.lo \
 	drvint25.lo drvdos16.lo drvdos32.lo drvcpcem.lo drvdskf.lo \
 	drvimd.lo drvlogi.lo drvsimh.lo drvposix.lo drvnwasp.lo \
-	drvadisk.lo drvrcpm.lo drvtele.lo drvmyz80.lo drvydsk.lo \
-	drvcfi.lo drvqm.lo drvqrst.lo drvldbs.lo ldbs.lo
+	drvadisk.lo drvrcpm.lo drvsap.lo drvtele.lo drvmyz80.lo \
+	drvydsk.lo drvcfi.lo drvqm.lo drvqrst.lo drvldbs.lo ldbs.lo
 libdsk_la_OBJECTS = $(am_libdsk_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -374,7 +374,7 @@ EXTRA_DIST = $(CLASSDPRE)/Drive.java \
 # If interfaces have been removed set the right-hand number to 0.
 # 
 #
-libdsk_la_LDFLAGS = -version-info 7:0:3
+libdsk_la_LDFLAGS = -version-info 7:2:3
 libdsk_la_SOURCES = dskread.c  dskwrite.c dskcheck.c dskstat.c \
 		   dsklphys.c dskfmt.c   dskopen.c  dskpars.c \
 		   dskerror.c dskseek.c  dsksecid.c dskgeom.c \
@@ -414,6 +414,7 @@ libdsk_la_SOURCES = dskread.c  dskwrite.c dskcheck.c dskstat.c \
 		   drvnwasp.h drvnwasp.c \
 		   drvadisk.h drvadisk.c \
 		   drvrcpm.h  drvrcpm.c \
+		   drvsap.h   drvsap.c \
 		   drvtele.h  drvtele.c \
 		   drvmyz80.h drvmyz80.c \
 		   drvydsk.h  drvydsk.c \
@@ -550,6 +551,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/drvqm.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/drvqrst.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/drvrcpm.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/drvsap.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/drvsimh.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/drvtele.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/drvwin16.Plo@am__quote@

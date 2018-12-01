@@ -30,7 +30,7 @@ EXTRA_DIST=$(CLASSDPRE)/Drive.java \
 # If interfaces have been removed set the right-hand number to 0.
 # 
 #
-libdsk_la_LDFLAGS = -version-info 7:0:3
+libdsk_la_LDFLAGS = -version-info 7:2:3
 libdsk_la_SOURCES = dskread.c  dskwrite.c dskcheck.c dskstat.c \
 		   dsklphys.c dskfmt.c   dskopen.c  dskpars.c \
 		   dskerror.c dskseek.c  dsksecid.c dskgeom.c \
@@ -70,6 +70,7 @@ libdsk_la_SOURCES = dskread.c  dskwrite.c dskcheck.c dskstat.c \
 		   drvnwasp.h drvnwasp.c \
 		   drvadisk.h drvadisk.c \
 		   drvrcpm.h  drvrcpm.c \
+		   drvsap.h   drvsap.c \
 		   drvtele.h  drvtele.c \
 		   drvmyz80.h drvmyz80.c \
 		   drvydsk.h  drvydsk.c \

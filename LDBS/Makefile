@@ -6,7 +6,8 @@ ZIPFILES=dsk2ldbs.c  ldbs2dsk.c  ldbs.c  ldbsdump.c  ldbs.h  ldbstest.c \
 	ldbscopy.c ldbs_v2.c \
 	ldbs.html Makefile
 
-EXAMPLES=examples.txt chaos.ldbs md3.ldbs textfiles.ldbs reformat.ldbs
+EXAMPLES=examples.txt chaos.ldbs md3.ldbs textfiles.ldbs reformat.ldbs \
+	32k.ldbs 32sectors.ldbs offsets.ldbs copies.ldbs gap3.ldbs
 
 all:	dsk2ldbs ldbs2dsk ldbstest ldbsdump saveldbs.com ldbscopy ldbs_v2
 

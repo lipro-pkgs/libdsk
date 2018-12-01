@@ -826,7 +826,7 @@ dsk_err_t tele_close(DSK_DRIVER *s)
 	size_t len;
 	unsigned char header[12];
 	LDBS_STATS st;
-	int n, rate;
+	int n, rate, have_header;
 	char *comment;
 	unsigned crc;
 
@@ -860,6 +860,7 @@ dsk_err_t tele_close(DSK_DRIVER *s)
 	/* OK, we've got a disk image we need to save. Did it have a 
 	 * Teledisk header? */
 	default_header(header);	
+	have_header = 0;
 
 	/* If the blockstore contains a Teledisk header, default the new 
 	 * header to match that one. */
@@ -879,7 +880,9 @@ dsk_err_t tele_close(DSK_DRIVER *s)
 		header[7] = self->tele_head.doubletrack;
 		header[8] = self->tele_head.dosmode;
 		header[9] = self->tele_head.sides;
+		have_header = 1;
 	}
+
 	err = ldbs_get_stats(self->tele_super.ld_store, &st);
 	if (err)
 	{
@@ -888,6 +891,7 @@ dsk_err_t tele_close(DSK_DRIVER *s)
 		dsk_report_end();
 		return err;
 	}
+
 	header[4] = 21;	/* Always report Teledisk version as 21 (2.1x). This
 			 * seems to be the most common version in the 
 			 * TD0 files available to me. */
@@ -933,8 +937,42 @@ dsk_err_t tele_close(DSK_DRIVER *s)
 	{
 		header[5] |= 0x80;
 	}
-	/* We can't give header[6] or header[7] (drive type & stepping) useful
-	 * values, so leave them be. */
+	/* [1.5.6] Attempt to guess a reasonable value for header[6] (drive 
+	 * type) based on the stats. I can't at the moment think of a useful
+	 * way to populate header[7] (stepping) so leaver that as it is */
+	if (!have_header)
+	{
+		/* Estimate track capacity, bytes */
+		unsigned long max_tracksize = st.max_spt * st.max_sector_size;
+
+		/* If FM recording, double it to get MFM capacity */
+		if (header[5] & 0x80) max_tracksize *= 2;
+
+		/* Up to 43 tracks, up to 5120 bytes / track. Assume 360k */
+		if (st.max_cylinder < 44 && max_tracksize <= 5120)
+		{
+			header[6] = 1;	/* 5.25" 48tpi */
+		}
+		/* Otherwise if up to 5120 bytes assume 720k */
+		else if (max_tracksize <= 5120)
+		{
+			header[6] = 3;	/* 3.5" 720k */
+		}
+		/* Otherwise if up to 8k assume 1.2M */
+		else if (max_tracksize <= 8192)
+		{
+			header[6] = 2;	/* 5.25" 96tpi */
+		}
+		else	/* Everything else assumes 1.4M */
+		{ 
+			header[6] = 4;	/* 3.5" 1440k */
+		}
+		/* Other possible values: 
+		 * 0 => 96tpi disk in 48tpi drive,
+		 * 5 => 8" drive
+		 * 6 => 3.5" drive (?ED drive)
+		 */
+	}
 
 	err = ldbs_get_comment(self->tele_super.ld_store, &comment);	
 	if (err)
