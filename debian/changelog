@@ -2,6 +2,8 @@ libdsk (1.5.12+dfsg-1cpm4l1) UNRELEASED; urgency=low
 
   * UNRELEASED
   * New upstream version.
+  * debian/{watch,rules}: Add 'get-orig-source' target as strongly
+    recommended by Debian Policy Rule §4.9 and fix the uscan rules.
 
  --
 
