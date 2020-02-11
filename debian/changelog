@@ -1,6 +1,5 @@
-libdsk (1.5.9+dfsg-1cpm4l1) UNRELEASED; urgency=low
+libdsk (1.5.9+dfsg-1cpm4l1) unstable; urgency=low
 
-  * UNRELEASED
   * debian/control: Updated maintainer fields for CPM4L's github place.
   * debian/control: Updated vcs fields for CPM4L's github place.
   * debian/{control,rules}: Downgrade to support oldstable systems.
@@ -18,7 +17,7 @@ libdsk (1.5.9+dfsg-1cpm4l1) UNRELEASED; urgency=low
   * debian/{libdsk-utils}: Upgrade package version for doc-base.
   * debian/{control,libdsk4.symbols}: Depends on Z and BZip2 compress libs.
 
- --
+ -- Stephan Linz <linz@li-pro.net>  Tue, 11 Feb 2020 12:05:22 +0100
 
 libdsk (1.5.9+dfsg-1) unstable; urgency=medium
 
