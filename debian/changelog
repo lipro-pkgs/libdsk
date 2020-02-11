@@ -6,6 +6,8 @@ libdsk (1.5.9+dfsg-1cpm4l1) UNRELEASED; urgency=low
   * debian/{control,rules}: Downgrade to support oldstable systems.
   * debian/{control,install,patches}: Exclude native Windows API on Gygwin
     and provide pkgconfig file.
+  * debian/{control,patches}: Fixes build with automake >= 1.13. Replace
+    deprecated AM_CONFIG_HEADER with AC_CONFIG_HEADERS.
 
  --
 

@@ -1,0 +1,31 @@
+From 21d4a3e5da61ce4abe3fc5447b55893fc4107991 Mon Sep 17 00:00:00 2001
+From: Jakub Bogusz <qboosh@pld-linux.org>
+Date: Fri, 17 Nov 2017 18:30:36 +0100
+Subject: [PLD] libdsk-am.patch (libdsk-1.4.2.spec)
+
+PLD - Polish(ed) / PLD Linux Distribution (https://www.pld-linux.org/)
+
+Added am patch (fixes build with automake 1.13). Replace deprecated
+AM_CONFIG_HEADER with AC_CONFIG_HEADERS.
+
+AM_CONFIG_HEADER has been removed in the just-released automake 1.13:
+https://lists.gnu.org/archive/html/automake/2012-12/msg00038.html
+
+Cherry-pick: https://raw.githubusercontent.com/pld-linux/libdsk/01606e0/libdsk-am.patch
+Submitted-by: Jakub Bogusz <qboosh@pld-linux.org>
+
+Signed-off-by: Stephan Linz <linz@li-pro.net>
+
+diff --git a/configure.ac b/configure.ac
+index 3aca225..361cab4 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -5,7 +5,7 @@ AC_CONFIG_SRCDIR(lib/dskopen.c)
+ AC_CONFIG_MACRO_DIR(m4)
+ AC_CANONICAL_SYSTEM
+ LT_INIT
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADERS(config.h)
+ AM_INIT_AUTOMAKE([foreign])
+ 
+ dnl Support for the Java Native Interface bindings
