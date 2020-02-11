@@ -4,3 +4,4 @@ reproducible.patch
 0001-2ba502a-yacp-libdsk-1.5.9-1bl1.src.patch
 0002-21d4a3e-pld-libdsk-am.patch
 0003-06336b1-pld-libdsk-java.patch
+0004-0483d81-fix-system-wide-format-list-in-manpage.patch
