@@ -1,0 +1,24 @@
+From 0483d81ce3a7591820887807987c67bba9a20ebf Mon Sep 17 00:00:00 2001
+From: Stephan Linz <linz@li-pro.net>
+Date: Sun, 15 Nov 2015 04:41:57 +0100
+Subject: Fix system-wide format list in manpage
+
+Signed-off-by: Stephan Linz <linz@li-pro.net>
+
+diff --git a/man/libdskrc.5 b/man/libdskrc.5
+index 08d90f9..5d675fa 100644
+--- a/man/libdskrc.5
++++ b/man/libdskrc.5
+@@ -150,8 +150,10 @@ Skip deleted data when searching for non-deleted data (or vice versa).
+ User-specified format list.
+ 
+ .TP
+-\fI/usr/local/share/LibDsk/libdskrc\fR
+-System-wide format list.
++\fI/etc/LibDsk/libdskrc\fR
++System-wide format list. On some system you will find this list file
++installed under \fI/usr/share/LibDsk\fR
++or \fI/usr/local/share/LibDsk\fR.
+ .\"
+ .\"------------------------------------------------------------------
+ .\"

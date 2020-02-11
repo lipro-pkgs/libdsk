@@ -7,7 +7,13 @@ libdsk.so.4 libdsk4 #MINVER#
  adisk_close@Base 1.5.4+dfsg
  adisk_creat@Base 1.5.4+dfsg
  adisk_open@Base 1.5.4+dfsg
+ bz2_abort@Base 1.5.4+dfsg
+ bz2_commit@Base 1.5.4+dfsg
+ bz2_creat@Base 1.5.4+dfsg
+ bz2_open@Base 1.5.4+dfsg
+ cc_bz2@Base 1.5.4+dfsg
  cc_dskf@Base 1.5.4+dfsg
+ cc_gz@Base 1.5.4+dfsg
  cc_sq@Base 1.5.4+dfsg
  cc_tlzh@Base 1.5.4+dfsg
  cdskf_abort@Base 1.5.4+dfsg
@@ -188,6 +194,10 @@ libdsk.so.4 libdsk4 #MINVER#
  fork_call@Base 1.5.4+dfsg
  fork_close@Base 1.5.4+dfsg
  fork_open@Base 1.5.4+dfsg
+ gz_abort@Base 1.5.4+dfsg
+ gz_commit@Base 1.5.4+dfsg
+ gz_creat@Base 1.5.4+dfsg
+ gz_open@Base 1.5.4+dfsg
  imd_close@Base 1.5.4+dfsg
  imd_creat@Base 1.5.4+dfsg
  imd_open@Base 1.5.4+dfsg

@@ -1,0 +1,79 @@
+From 2ba502a5a79dc35afe103f783a5d63ebbfd3505c Mon Sep 17 00:00:00 2001
+From: "Daisuke Fujimura (fd0)" <booleanlabel@gmail.com>
+Date: Thu, 17 Jan 2019 23:57:33 +0100
+Subject: [YACP] libdsk-1.5.9-1bl1.src.patch
+
+YACP - Yet Another Cygwin Ports (https://github.com/fd00/yacp)
+
+Added cygwin support: Exclude native Windows API on Gygwin
+and provide pkgconfig file.
+
+Cherry-pick: https://github.com/fd00/yacp/raw/b7a08b2/libdsk/libdsk-1.5.9-1bl1.src.patch
+Submitted-by: Daisuke Fujimura (http://about.me/fd0)
+
+Signed-off-by: Stephan Linz <linz@li-pro.net>
+
+diff --git a/Makefile.am b/Makefile.am
+index baab580..9daaeff 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -23,4 +23,5 @@ EXTRA_DIST= $(srcdir)/m4/* \
+ install-man:
+ 	cd man && make install-man
+ 
+-
++pkgconfigdir = $(libdir)/pkgconfig
++pkgconfig_DATA = $(PACKAGE).pc
+diff --git a/configure.ac b/configure.ac
+index 010cfc6..3aca225 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -52,11 +52,13 @@ AC_CHECK_HEADERS(errno.h limits.h sys/ioctl.h stat.h sys/stat.h sys/types.h)
+ AC_CHECK_HEADERS(unistd.h termios.h libgen.h assert.h)
+ AC_CHECK_HEADERS(dirent.h fcntl.h utime.h pwd.h time.h dir.h direct.h)
+ AC_CHECK_HEADERS(linux/fd.h linux/fdreg.h sys/sysmacros.h shlobj.h)
++if test "$host_os" != "cygwin"; then
+ AC_CHECK_HEADERS([windows.h winioctl.h], [], [], 
+ [[#ifdef HAVE_WINDOWS_H
+ #include <windows.h>
+ #endif
+ ]])
++fi
+ 
+ dnl Checks for functions
+ AC_CHECK_FUNCS(strcmpi stricmp strcasecmp, break)
+@@ -125,4 +127,4 @@ AC_CHECK_FUNCS(strerror)
+ AC_SUBST(LIBDSKJAR)
+ AC_SUBST(TOOLCLASSES)
+ AC_SUBST(CLASSPATH)
+-AC_OUTPUT(Makefile doc/Makefile include/Makefile lib/Makefile tools/Makefile man/Makefile)
++AC_OUTPUT(libdsk.pc Makefile doc/Makefile include/Makefile lib/Makefile tools/Makefile man/Makefile)
+diff --git a/lib/Makefile.am b/lib/Makefile.am
+index 12b9756..dcc8bf1 100644
+--- a/lib/Makefile.am
++++ b/lib/Makefile.am
+@@ -30,7 +30,7 @@ EXTRA_DIST=$(CLASSDPRE)/Drive.java \
+ # If interfaces have been removed set the right-hand number to 0.
+ # 
+ #
+-libdsk_la_LDFLAGS = -version-info 7:2:3
++libdsk_la_LDFLAGS = -no-undefined -version-info 7:2:3
+ libdsk_la_SOURCES = dskread.c  dskwrite.c dskcheck.c dskstat.c \
+ 		   dsklphys.c dskfmt.c   dskopen.c  dskpars.c \
+ 		   dskerror.c dskseek.c  dsksecid.c dskgeom.c \
+diff --git a/libdsk.pc.in b/libdsk.pc.in
+new file mode 100644
+index 0000000..328dc24
+--- /dev/null
++++ b/libdsk.pc.in
+@@ -0,0 +1,10 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++
++Name: libdsk
++Description: Library for accessing discs and disc image files
++Version: @VERSION@
++Libs: -L${libdir} -ldsk
++Cflags: -I${includedir}

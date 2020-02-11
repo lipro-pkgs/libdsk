@@ -1,3 +1,24 @@
+libdsk (1.5.9+dfsg-1cpm4l1) unstable; urgency=low
+
+  * debian/control: Updated maintainer fields for CPM4L's github place.
+  * debian/control: Updated vcs fields for CPM4L's github place.
+  * debian/{control,rules}: Downgrade to support oldstable systems.
+  * debian/{control,install,patches}: Exclude native Windows API on Gygwin
+    and provide pkgconfig file.
+  * debian/{control,patches}: Fixes build with automake >= 1.13. Replace
+    deprecated AM_CONFIG_HEADER with AC_CONFIG_HEADERS.
+  * debian/{control,patches}: Fixes Java Doc issues and JAR install place.
+  * debian/{control,patches}: Fixes location of system-wide format list
+    in manpage.
+  * debian/{control,patches}: Export missing default format number in JNI.
+  * debian/{control,patches}: Add Robotron SCP format definitions.
+  * debian/{libdsk-utils}: Add binary and manpage for new disk converter.
+  * debian/{libdsk-utils}: Add missing manpage about the format list file.
+  * debian/{libdsk-utils}: Upgrade package version for doc-base.
+  * debian/{control,libdsk4.symbols}: Depends on Z and BZip2 compress libs.
+
+ -- Stephan Linz <linz@li-pro.net>  Tue, 11 Feb 2020 12:05:22 +0100
+
 libdsk (1.5.9+dfsg-1) unstable; urgency=medium
 
   * New upstream version.

@@ -1,4 +1,5 @@
 debian/tmp/usr/share/man/man1/apriboot.1
+debian/tmp/usr/share/man/man1/dskconv.1
 debian/tmp/usr/share/man/man1/dskdump.1
 debian/tmp/usr/share/man/man1/dskform.1
 debian/tmp/usr/share/man/man1/dskid.1
@@ -6,3 +7,4 @@ debian/tmp/usr/share/man/man1/dskscan.1
 debian/tmp/usr/share/man/man1/dsktrans.1
 debian/tmp/usr/share/man/man1/dskutil.1
 debian/tmp/usr/share/man/man1/md3serial.1
+debian/tmp/usr/share/man/man5/libdskrc.5

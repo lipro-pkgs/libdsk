@@ -1,20 +1,23 @@
 Source: libdsk
 Section: libs
 Priority: optional
-Maintainer: Dominik George <natureshadow@debian.org>
+Maintainer: Stephan Linz <linz@li-pro.net>
 Build-Depends:
- debhelper (>= 11),
+ debhelper (>= 9),
+ dh-autoreconf,
  dh-exec,
+ zlib1g-dev,
+ libbz2-dev,
  exiftool,
  ghostscript,
  lyx,
  texlive-extra-utils,
  texlive-fonts-recommended,
  texlive-latex-recommended,
-Standards-Version: 4.2.1
+Standards-Version: 3.9.8
 Homepage: http://www.seasip.info/Unix/LibDsk/
-Vcs-Git: https://salsa.debian.org/debian/libdsk.git
-Vcs-Browser: https://salsa.debian.org/debian/libdsk
+Vcs-Git: https://github.com/lipro-pkgs/libdsk.git
+Vcs-Browser: https://github.com/lipro-pkgs/libdsk
 
 Package: libdsk4
 Architecture: any
