@@ -4,6 +4,8 @@ libdsk (1.5.9+dfsg-1cpm4l1) UNRELEASED; urgency=low
   * debian/control: Updated maintainer fields for CPM4L's github place.
   * debian/control: Updated vcs fields for CPM4L's github place.
   * debian/{control,rules}: Downgrade to support oldstable systems.
+  * debian/{control,install,patches}: Exclude native Windows API on Gygwin
+    and provide pkgconfig file.
 
  --
 
