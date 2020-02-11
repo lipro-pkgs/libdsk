@@ -1,0 +1,48 @@
+From ccc49bd1e812cd8327aee830505025b28877ce78 Mon Sep 17 00:00:00 2001
+From: Stephan Linz <linz@li-pro.net>
+Date: Sun, 15 Nov 2015 01:05:43 +0100
+Subject: Add Robotron SCP format definitions
+
+Signed-off-by: Stephan Linz <linz@li-pro.net>
+
+diff --git a/include/libdsk.h b/include/libdsk.h
+index eb54819..650a43c 100644
+--- a/include/libdsk.h
++++ b/include/libdsk.h
+@@ -158,6 +158,8 @@ typedef enum
+ 	FMT_AMPRO400S,	/* 5 sectors, 1024 bytes/sector, 1 side */
+ 	FMT_AMPRO800,	/* 5 sectors, 1024 bytes/sector, 2 sides */
+ 	FMT_1200K,	/* 15 sectors, 2 sides  */
++	FMT_SCP640,	/* 16 sectors,  256 bytes/sector, 2 sides */
++	FMT_SCP800,	/*  5 sectors, 1024 bytes/sector, 2 sides */
+ 	FMT_UNKNOWN = -1
+ } dsk_format_t;
+ 
+diff --git a/lib/dsksgeom.c b/lib/dsksgeom.c
+index b0d40f2..e3b34b0 100644
+--- a/lib/dsksgeom.c
++++ b/lib/dsksgeom.c
+@@ -67,6 +67,8 @@ static DSK_NAMEDGEOM stdg[] =
+ {"ampro400s",{ SIDES_ALT,     80, 1, 5,   1,1024, RATE_SD, 0x04, 0x05,   0,  0 }, "Ampro 80 track single-sided" }, /* Ampro 400k (22DISK AMP3) */
+ {"ampro800",{ SIDES_ALT,     80, 2, 5,   17,1024, RATE_SD, 0x04, 0x05,   0,  0 }, "Ampro 80 track double-sided" }, /* Ampro 800k (22DISK AMP4) */
+ {"pcw1200", { SIDES_ALT,     80, 2,15,    1, 512, RATE_HD, 0x1B, 0x54,   0,  0 }, "PcW16 / IBM 1200k "}, /* 1.2M */
++{"scp640",    { SIDES_ALT,     80, 2,16,    1, 256, RATE_SD, 0x12, 0x60,   0,  0 }, "robotron / PC1715 SCP 640k" }, /* robotron / PC1715 SCP 640k */
++{"scp800",    { SIDES_ALT,     80, 2, 5,    1,1024, RATE_SD, 0x04, 0x05,   0,  0 }, "robotron / PC1715 SCP 800k" }, /* robotron / PC1715 SCP 800k */
+ 
+ /* Geometries below this line don't appear in dsk_format_t and can be accessed
+  * only by name. */
+diff --git a/lib/uk/co/demon/seasip/libdsk/FormatType.java b/lib/uk/co/demon/seasip/libdsk/FormatType.java
+index 8f63fea..90426e3 100644
+--- a/lib/uk/co/demon/seasip/libdsk/FormatType.java
++++ b/lib/uk/co/demon/seasip/libdsk/FormatType.java
+@@ -106,6 +106,10 @@ public class FormatType
+ /** 15 sectors, 2 sides, 80 tracks, 512 byte sectors.
+  * This corresponds to the PCDOS / PCW16 1200k format. */
+ 	public static final int FMT_1200K = 27;
++/** 16 sectors, 2 side, 80 tracks, 256 byte sectors, first sector number is 1. */
++	public static final int FMT_SCP640 = 28;
++/** 5 sectors, 2 side, 80 tracks, 1024 byte sectors, first sector number is 1. */
++	public static final int FMT_SCP800 = 29;
+ 
+ /** Initialise a Geometry object with a standard format. 
+  * @param formatId One of the format IDs provided by this class.

@@ -6,3 +6,4 @@ reproducible.patch
 0003-06336b1-pld-libdsk-java.patch
 0004-0483d81-fix-system-wide-format-list-in-manpage.patch
 0005-a46f821-jni-export-missing-default-format-number.patch
+0006-ccc49bd-add-robotron-scp-format-definitions.patch

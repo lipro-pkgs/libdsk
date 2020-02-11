@@ -12,6 +12,7 @@ libdsk (1.5.9+dfsg-1cpm4l1) UNRELEASED; urgency=low
   * debian/{control,patches}: Fixes location of system-wide format list
     in manpage.
   * debian/{control,patches}: Export missing default format number in JNI.
+  * debian/{control,patches}: Add Robotron SCP format definitions.
 
  --
 
