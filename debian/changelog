@@ -1,3 +1,10 @@
+libdsk (1.5.12+dfsg-1cpm4l1) UNRELEASED; urgency=low
+
+  * UNRELEASED
+  * New upstream version.
+
+ --
+
 libdsk (1.5.9+dfsg-1cpm4l1) unstable; urgency=low
 
   * debian/control: Updated maintainer fields for CPM4L's github place.
