@@ -8,6 +8,7 @@ libdsk (1.5.9+dfsg-1cpm4l1) UNRELEASED; urgency=low
     and provide pkgconfig file.
   * debian/{control,patches}: Fixes build with automake >= 1.13. Replace
     deprecated AM_CONFIG_HEADER with AC_CONFIG_HEADERS.
+  * debian/{control,patches}: Fixes Java Doc issues and JAR install place.
 
  --
 
