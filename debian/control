@@ -3,7 +3,8 @@ Section: libs
 Priority: optional
 Maintainer: Stephan Linz <linz@li-pro.net>
 Build-Depends:
- debhelper (>= 11),
+ debhelper (>= 9),
+ dh-autoreconf,
  dh-exec,
  exiftool,
  ghostscript,
@@ -11,7 +12,7 @@ Build-Depends:
  texlive-extra-utils,
  texlive-fonts-recommended,
  texlive-latex-recommended,
-Standards-Version: 4.2.1
+Standards-Version: 3.9.8
 Homepage: http://www.seasip.info/Unix/LibDsk/
 Vcs-Git: https://github.com/lipro-pkgs/libdsk.git
 Vcs-Browser: https://github.com/lipro-pkgs/libdsk
