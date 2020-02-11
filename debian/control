@@ -6,6 +6,8 @@ Build-Depends:
  debhelper (>= 9),
  dh-autoreconf,
  dh-exec,
+ zlib1g-dev,
+ libbz2-dev,
  exiftool,
  ghostscript,
  lyx,
