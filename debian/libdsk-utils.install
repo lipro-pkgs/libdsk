@@ -3,7 +3,9 @@ debian/tmp/usr/bin/dskconv usr/bin
 debian/tmp/usr/bin/dskdump usr/bin
 debian/tmp/usr/bin/dskform usr/bin
 debian/tmp/usr/bin/dskid usr/bin
+debian/tmp/usr/bin/dsklabel usr/bin
 debian/tmp/usr/bin/dskscan usr/bin
 debian/tmp/usr/bin/dsktrans usr/bin
 debian/tmp/usr/bin/dskutil usr/bin
+debian/tmp/usr/bin/lsgotek usr/bin
 debian/tmp/usr/bin/md3serial usr/bin
