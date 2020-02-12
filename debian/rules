@@ -17,7 +17,7 @@ override_dh_auto_build:
 	cd doc; exiftool -all:all= libdsk.pdf
 
 override_dh_installdocs:
-	dh_installdocs --link-doc=libdsk4
+	dh_installdocs --link-doc=libdsk5
 
 override_dh_compress:
 	# Do not compress so doc-base points to readable files

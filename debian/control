@@ -19,7 +19,7 @@ Homepage: http://www.seasip.info/Unix/LibDsk/
 Vcs-Git: https://github.com/lipro-pkgs/libdsk.git
 Vcs-Browser: https://github.com/lipro-pkgs/libdsk
 
-Package: libdsk4
+Package: libdsk5
 Architecture: any
 Multi-Arch: same
 Depends:
@@ -46,7 +46,7 @@ Description: library for accessing discs and disc image file
  .
  This package contains the library itself.
 
-Package: libdsk4-dev
+Package: libdsk5-dev
 Architecture: any
 Depends:
  ${misc:Depends},
