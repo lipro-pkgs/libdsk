@@ -1,9 +1,12 @@
-From 0483d81ce3a7591820887807987c67bba9a20ebf Mon Sep 17 00:00:00 2001
+From 84c8926a1e38859bfe2bf06dbb988e8fb4c35dc5 Mon Sep 17 00:00:00 2001
 From: Stephan Linz <linz@li-pro.net>
 Date: Sun, 15 Nov 2015 04:41:57 +0100
-Subject: Fix system-wide format list in manpage
+Subject: [PATCH] Fix system-wide format list in manpage
 
 Signed-off-by: Stephan Linz <linz@li-pro.net>
+---
+ man/libdskrc.5 | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
 diff --git a/man/libdskrc.5 b/man/libdskrc.5
 index 08d90f9..5d675fa 100644

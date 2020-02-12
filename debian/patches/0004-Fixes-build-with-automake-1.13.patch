@@ -1,9 +1,7 @@
-From 21d4a3e5da61ce4abe3fc5447b55893fc4107991 Mon Sep 17 00:00:00 2001
+From 23d94702195aaf3eb4bf0b8b905cd3b3683646ae Mon Sep 17 00:00:00 2001
 From: Jakub Bogusz <qboosh@pld-linux.org>
 Date: Fri, 17 Nov 2017 18:30:36 +0100
-Subject: [PLD] libdsk-am.patch (libdsk-1.4.2.spec)
-
-PLD - Polish(ed) / PLD Linux Distribution (https://www.pld-linux.org/)
+Subject: [PATCH] Fixes build with automake 1.13
 
 Added am patch (fixes build with automake 1.13). Replace deprecated
 AM_CONFIG_HEADER with AC_CONFIG_HEADERS.
@@ -11,16 +9,22 @@ AM_CONFIG_HEADER with AC_CONFIG_HEADERS.
 AM_CONFIG_HEADER has been removed in the just-released automake 1.13:
 https://lists.gnu.org/archive/html/automake/2012-12/msg00038.html
 
-Cherry-pick: https://raw.githubusercontent.com/pld-linux/libdsk/01606e0/libdsk-am.patch
-Submitted-by: Jakub Bogusz <qboosh@pld-linux.org>
+PLD - Polish(ed) / PLD Linux Distribution (https://www.pld-linux.org/)
+
+Originated-by: [PLD] libdsk-am.patch (libdsk-1.4.2.spec)
+Originated-md5: 90b0919dfc48d2edfc0de6aa7245e4b4
+Originated-URL: https://raw.githubusercontent.com/pld-linux/libdsk/01606e0/libdsk-am.patch
 
 Signed-off-by: Stephan Linz <linz@li-pro.net>
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/configure.ac b/configure.ac
-index 3aca225..361cab4 100644
+index 724b851..8f250df 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -5,7 +5,7 @@ AC_CONFIG_SRCDIR(lib/dskopen.c)
+@@ -6,7 +6,7 @@ AC_CONFIG_AUX_DIR(config)
  AC_CONFIG_MACRO_DIR(m4)
  AC_CANONICAL_SYSTEM
  LT_INIT

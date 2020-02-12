@@ -4,6 +4,8 @@ libdsk (1.5.12+dfsg-1cpm4l1) UNRELEASED; urgency=low
   * New upstream version.
   * debian/{watch,rules}: Add 'get-orig-source' target as strongly
     recommended by Debian Policy Rule §4.9 and fix the uscan rules.
+  * debian/patches: Rebase all patches from branch 'cpm4l/libdsk-1.5.12'
+    as provided by: https://github.com/lipro-cpm4l/libdsk
 
  --
 

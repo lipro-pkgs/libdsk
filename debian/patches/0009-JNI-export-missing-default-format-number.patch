@@ -1,15 +1,18 @@
-From a46f8217ed5816305ea6a46a5cdfaf448986c2c4 Mon Sep 17 00:00:00 2001
+From b322a28da9aa1fe94881e9d7d0c71dad0c5c9af3 Mon Sep 17 00:00:00 2001
 From: Stephan Linz <linz@li-pro.net>
 Date: Sun, 15 Nov 2015 01:04:26 +0100
-Subject: JNI: export missing default format number
+Subject: [PATCH] JNI: export missing default format number
 
-Syncronize with 'typedef enum { ... } dsk_format_t' as
+Synchronize with 'typedef enum { ... } dsk_format_t' as
 declared in 'include/libdsk.h'.
 
 Signed-off-by: Stephan Linz <linz@li-pro.net>
+---
+ lib/uk/co/demon/seasip/libdsk/FormatType.java | 29 +++++++++++++++++--
+ 1 file changed, 26 insertions(+), 3 deletions(-)
 
 diff --git a/lib/uk/co/demon/seasip/libdsk/FormatType.java b/lib/uk/co/demon/seasip/libdsk/FormatType.java
-index aa68fbd..8f63fea 100644
+index aa68fbd..3bae87e 100644
 --- a/lib/uk/co/demon/seasip/libdsk/FormatType.java
 +++ b/lib/uk/co/demon/seasip/libdsk/FormatType.java
 @@ -42,7 +42,7 @@ public class FormatType
@@ -21,7 +24,7 @@ index aa68fbd..8f63fea 100644
  	public static final int FMT_1440K = 4;
  /** 8 sectors, 1 side, 40 tracks, 512 byte sectors.
   * This corresponds to the PCDOS 1.0 160k format. */
-@@ -83,12 +83,29 @@ public class FormatType
+@@ -83,12 +83,35 @@ public class FormatType
  /** 10 sectors, 1 side, 40 tracks, 512 byte sectors. 
     First sector number is 1. This corresponds to the PCW XCF2 format. */
  	public static final int FMT_200K = 17;
@@ -50,6 +53,12 @@ index aa68fbd..8f63fea 100644
 +/** 15 sectors, 2 sides, 80 tracks, 512 byte sectors.
 + * This corresponds to the PCDOS / PCW16 1200k format. */
 +	public static final int FMT_1200K = 27;
++/** 12 sectors, 1 sides, 80 tracks, 512 byte sectors.
++ * This corresponds to the Apple GCR 400k format. */
++	public static final int FMT_MAC400 = 28;
++/** 12 sectors, 2 sides, 80 tracks, 512 byte sectors.
++ * This corresponds to the Apple GCR 800k format. */
++	public static final int FMT_MAC800 = 29;
  
  /** Initialise a Geometry object with a standard format. 
   * @param formatId One of the format IDs provided by this class.

@@ -1,45 +1,21 @@
-From 06336b1cebd84c1fe2f747252a3c0d613aa8748c Mon Sep 17 00:00:00 2001
+From 3ba5defb3968d4edd17ce07331515f146b8697e7 Mon Sep 17 00:00:00 2001
 From: Jakub Bogusz <qboosh@pld-linux.org>
 Date: Fri, 17 Nov 2017 18:30:36 +0100
-Subject: [PLD] libdsk-java.patch (libdsk-1.4.2.spec)
+Subject: [PATCH] Fixes javadoc typos for different parameters
 
 PLD - Polish(ed) / PLD Linux Distribution (https://www.pld-linux.org/)
 
-Added java patch, package libdsk.jar. Change storage place for
-JAR file and add javadoc fixes.
-
-Cherry-pick: https://raw.githubusercontent.com/pld-linux/libdsk/01606e0/libdsk-java.patch
-Submitted-by: Jakub Bogusz <qboosh@pld-linux.org>
+Originated-by: [PLD] libdsk-java.patch (libdsk-1.4.2.spec)
+Originated-md5: 110ef4d9cf39d45e51cff8186c1ee2a4
+Originated-URL: https://raw.githubusercontent.com/pld-linux/libdsk/01606e0/libdsk-java.patch
 
 Signed-off-by: Stephan Linz <linz@li-pro.net>
+---
+ lib/uk/co/demon/seasip/libdsk/Drive.java | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
 
-diff --git a/lib/Makefile.am b/lib/Makefile.am
-index dcc8bf1..9f4cc3a 100644
---- a/lib/Makefile.am
-+++ b/lib/Makefile.am
-@@ -93,7 +93,7 @@ JARHEADERS=$(HEADERPRE)_Drive.h \
- CLEANFILES=$(JARCLASSES) $(JARHEADERS)
- 
- libdsk.jar:	$(JARCLASSES)
--	$(JAR) c0f $@ uk/*
-+	$(JAR) c0f $@ uk/co/demon/seasip/libdsk/*.class
- 	$(JAVADOC) -d $(top_srcdir)/doc/jni $(CLASSCPRE)
- 
- $(CLASSDPRE)/%.class:   $(srcdir)/$(CLASSDPRE)/%.java
-@@ -109,7 +109,8 @@ $(HEADERPRE)_%.h:         $(CLASSDPRE)/%.class
- 
- $(srcdir)/dskjni.c:	$(JARHEADERS)
- 
--install-exec-local:
--	$(mkinstalldirs) $(libdir)
--	if test x@LIBDSKJAR@ = x; then true; else $(INSTALL_DATA) @LIBDSKJAR@ $(DESTDIR)/$(libdir); fi
-+javadir = /usr/share/java
- 
-+install-exec-local:
-+	$(mkinstalldirs) $(DESTDIR)$(javadir)
-+	if test x@LIBDSKJAR@ = x; then true; else $(INSTALL_DATA) @LIBDSKJAR@ $(DESTDIR)$(javadir); fi
 diff --git a/lib/uk/co/demon/seasip/libdsk/Drive.java b/lib/uk/co/demon/seasip/libdsk/Drive.java
-index 6db72ed..a72185d 100644
+index 6db72ed..86bd0ce 100644
 --- a/lib/uk/co/demon/seasip/libdsk/Drive.java
 +++ b/lib/uk/co/demon/seasip/libdsk/Drive.java
 @@ -120,7 +120,7 @@ public class Drive
@@ -74,7 +50,7 @@ index 6db72ed..a72185d 100644
   *
   * @param g The drive geometry to use.
 - * @param c The physical cylinder to use. 
-+ * @param cyl The physical cylinder to use. 
++ * @param cyl The physical cylinder to use.
   * @param h The physical head to use.
   * @param fd An array of FormatData objects containing sector headers.
   * @param filler The byte with which to fill the empty sectors. 
@@ -83,7 +59,7 @@ index 6db72ed..a72185d 100644
    * @param g The drive geometry to use. 
    * @param buf The buffer to be filled with data. 
 -  * @param cyl The physical cylinder to use. 
-+  * @param cylinder The physical cylinder to use. 
++  * @param cylinder The physical cylinder to use.
    * @param head The physical head to use.
    * @exception DskException If the read failed for any reason, or the driver cannot
    *                     read sectors.
@@ -92,7 +68,7 @@ index 6db72ed..a72185d 100644
    * @param g The drive geometry to use. 
    * @param buf The buffer to be filled with data. 
 -  * @param cyl The physical cylinder to use. 
-+  * @param cylinder The physical cylinder to use. 
++  * @param cylinder The physical cylinder to use.
    * @param head The physical head to use.
    * @param cylExpected The expected cylinder number in the sector header.
 -  * @param cylExpected The expected head number in the sector header.
@@ -105,7 +81,7 @@ index 6db72ed..a72185d 100644
   *
   * @param g The drive geometry to use.
 - * @param cyl The physical cylinder to use. 
-+ * @param cylinder The physical cylinder to use. 
++ * @param cylinder The physical cylinder to use.
   * @param head The physical head to use.
   * @param filler The byte with which to fill the empty sectors. 
   * @exception DskException If the format failed for any reason, or the driver cannot
@@ -114,7 +90,7 @@ index 6db72ed..a72185d 100644
  
  /** Set the number of times an operation will be retried.
 - * @param n The number of times to retry a read, write or format, 1 or more. 
-+ * @param c The number of times to retry a read, write or format, 1 or more. 
++ * @param c The number of times to retry a read, write or format, 1 or more.
   * @exception DskException If the number passed is 0. */
  	public native void setRetry(int c) throws DskException;	
  
