@@ -1,6 +1,5 @@
-libdsk (1.5.12+dfsg-1cpm4l1) UNRELEASED; urgency=low
+libdsk (1.5.12+dfsg-1cpm4l1) unstable; urgency=low
 
-  * UNRELEASED
   * New upstream version.
   * debian/{watch,rules}: Add 'get-orig-source' target as strongly
     recommended by Debian Policy Rule §4.9 and fix the uscan rules.
@@ -11,7 +10,7 @@ libdsk (1.5.12+dfsg-1cpm4l1) UNRELEASED; urgency=low
     label on DOS, CP/M or DFS media) and lsgotek (list the drive images
     on a Gotek-format USB drive).
 
- --
+ -- Stephan Linz <linz@li-pro.net>  Wed, 12 Feb 2020 19:34:28 +0100
 
 libdsk (1.5.9+dfsg-1cpm4l1) unstable; urgency=low
 
