@@ -1,0 +1,136 @@
+From: Stephan Linz <linz@li-pro.net>
+Subject: Backport lyxformat to 474 in LyX, compatible to 2.1
+Date: 2020-02-12
+--- a/doc/libdsk.lyx
++++ b/doc/libdsk.lyx
+@@ -1,9 +1,7 @@
+ #LyX 2.2 created this file. For more info see http://www.lyx.org/
+-\lyxformat 508
++\lyxformat 474
+ \begin_document
+ \begin_header
+-\save_transient_properties true
+-\origin unavailable
+ \textclass article
+ \use_default_options false
+ \maintain_unincluded_children false
+@@ -11,16 +9,16 @@
+ \language_package default
+ \inputencoding iso8859-1
+ \fontencoding global
+-\font_roman "times" "default"
+-\font_sans "default" "default"
+-\font_typewriter "default" "default"
+-\font_math "auto" "auto"
++\font_roman times
++\font_sans default
++\font_typewriter default
++\font_math auto
+ \font_default_family default
+ \use_non_tex_fonts false
+ \font_sc false
+ \font_osf false
+-\font_sf_scale 100 100
+-\font_tt_scale 100 100
++\font_sf_scale 100
++\font_tt_scale 100
+ \graphics default
+ \default_output_format default
+ \output_sync 0
+@@ -961,12 +959,9 @@ dg_heads
+  is greater than 1 (otherwise all the methods are equivalent) and you are
+  using functions that take logical sectors or tracks as parameters.
+  It will be one of: 
+-\begin_inset Separator latexpar
+-\end_inset
+-
+-
+ \end_layout
+ 
++
+ \begin_deeper
+ \begin_layout Description
+ 
+@@ -1109,12 +1104,9 @@ dg_datarate;
+ \family default
+  /* Data rate.
+  This will be one of:
+-\begin_inset Separator latexpar
+-\end_inset
+-
+-
+ \end_layout
+ 
++
+ \begin_deeper
+ \begin_layout Description
+ 
+@@ -1186,12 +1178,9 @@ dg_fm;
+  compatibility.
+  It contains the recording mode and additional flags.
+  To extract the recording mode, use (dg_fm & RECMODE_MASK):
+-\begin_inset Separator latexpar
+-\end_inset
+-
+-
+ \end_layout
+ 
++
+ \begin_deeper
+ \begin_layout Description
+ 
+@@ -3178,7 +3167,7 @@ If additional formats have been specifie
+  
+ \begin_inset CommandInset ref
+ LatexCommand ref
+-reference "subsec:libdskrc-format"
++reference "sub:libdskrc-format"
+ 
+ \end_inset
+ 
+@@ -4007,7 +3996,7 @@ ic file (.libdskrc).
+ \begin_layout Subsection
+ \begin_inset CommandInset label
+ LatexCommand label
+-name "subsec:libdskrc-format"
++name "sub:libdskrc-format"
+ 
+ \end_inset
+ 
+@@ -4550,7 +4539,7 @@ For a directory to be usable by rcpmfs,
+  This file is in INI format, similar to libdskrc (section 
+ \begin_inset CommandInset ref
+ LatexCommand ref
+-reference "subsec:libdskrc-format"
++reference "sub:libdskrc-format"
+ 
+ \end_inset
+ 
+@@ -4583,12 +4572,9 @@ SysTracks Number of system tracks.
+ \begin_layout Description
+ Version CP/M version that will be accessing the filesystem.
+  This should be 2, 3 or ISX:
+-\begin_inset Separator latexpar
+-\end_inset
+-
+-
+ \end_layout
+ 
++
+ \begin_deeper
+ \begin_layout Description
+ 2 CP/M 2 – no time stamps or disk labels.
+@@ -5942,12 +5928,9 @@ The various parts of this filename speci
+ 
+ \begin_layout Description
+ port The local serial port to use.
+-\begin_inset Separator latexpar
+-\end_inset
+-
+-
+ \end_layout
+ 
++
+ \begin_deeper
+ \begin_layout Itemize
+ Under Linux, this is the name of a serial port (eg /dev/ttyS0).

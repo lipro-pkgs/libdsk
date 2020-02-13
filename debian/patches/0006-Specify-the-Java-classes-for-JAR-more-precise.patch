@@ -1,0 +1,31 @@
+From 5bf4a33097e05a7e7846f0708cbb955b83fc93d2 Mon Sep 17 00:00:00 2001
+From: Jakub Bogusz <qboosh@pld-linux.org>
+Date: Fri, 17 Nov 2017 18:30:36 +0100
+Subject: [PATCH] Specify the Java classes for JAR more precise
+
+Declare 'uk/co/demon/seasip/libdsk/*.class' exactly.
+
+PLD - Polish(ed) / PLD Linux Distribution (https://www.pld-linux.org/)
+
+Originated-by: [PLD] libdsk-java.patch (libdsk-1.4.2.spec)
+Originated-md5: 110ef4d9cf39d45e51cff8186c1ee2a4
+Originated-URL: https://raw.githubusercontent.com/pld-linux/libdsk/01606e0/libdsk-java.patch
+
+Signed-off-by: Stephan Linz <linz@li-pro.net>
+---
+ lib/Makefile.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lib/Makefile.am b/lib/Makefile.am
+index 759503a..04d9618 100644
+--- a/lib/Makefile.am
++++ b/lib/Makefile.am
+@@ -97,7 +97,7 @@ JARHEADERS=$(HEADERPRE)_Drive.h \
+ CLEANFILES=$(JARCLASSES) $(JARHEADERS)
+ 
+ libdsk.jar:	$(JARCLASSES)
+-	$(JAR) c0f $@ uk/*
++	$(JAR) c0f $@ uk/co/demon/seasip/libdsk/*.class
+ 	$(JAVADOC) -d $(top_srcdir)/doc/jni $(CLASSCPRE)
+ 
+ $(CLASSDPRE)/%.class:   $(srcdir)/$(CLASSDPRE)/%.java

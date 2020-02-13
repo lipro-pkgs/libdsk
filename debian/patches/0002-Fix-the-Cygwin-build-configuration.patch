@@ -1,0 +1,37 @@
+From c6a4ed8962a538dc18dc13cc854eeb80798d786c Mon Sep 17 00:00:00 2001
+From: "Daisuke Fujimura (fd0)" <booleanlabel@gmail.com>
+Date: Mon, 23 Sep 2019 11:42:42 +0200
+Subject: [PATCH] Fix the Cygwin build configuration
+
+Exclude native Windows API on Gygwin. Do not build against the
+'windows.h' in case of Cygwin build and runtime environment.
+
+YACP - Yet Another Cygwin Ports (https://github.com/fd00/yacp)
+
+Originated-by: [YACP] libdsk-1.5.12-1bl1.src.patch
+Originated-md5: 2bfb00203a436ea2dea04f4813d4eecc
+Originated-URL: https://github.com/fd00/yacp/raw/37e7155/libdsk/libdsk-1.5.12-1bl1.src.patch
+
+Signed-off-by: Stephan Linz <linz@li-pro.net>
+---
+ configure.ac | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/configure.ac b/configure.ac
+index 5d24613..49f7387 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -53,11 +53,13 @@ AC_CHECK_HEADERS(errno.h limits.h sys/ioctl.h stat.h sys/stat.h sys/types.h)
+ AC_CHECK_HEADERS(unistd.h termios.h libgen.h assert.h)
+ AC_CHECK_HEADERS(dirent.h fcntl.h utime.h pwd.h time.h dir.h direct.h)
+ AC_CHECK_HEADERS(linux/fd.h linux/fdreg.h sys/sysmacros.h shlobj.h)
++if test "$host_os" != "cygwin"; then
+ AC_CHECK_HEADERS([windows.h winioctl.h], [], [], 
+ [[#ifdef HAVE_WINDOWS_H
+ #include <windows.h>
+ #endif
+ ]])
++fi
+ 
+ dnl Checks for functions
+ AC_CHECK_FUNCS(strcmpi stricmp strcasecmp, break)

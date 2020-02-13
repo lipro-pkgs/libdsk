@@ -1,0 +1,34 @@
+From cb04f16c2132f6eab9799302d44619a9650c48bb Mon Sep 17 00:00:00 2001
+From: Thorsten Glaser <tg@mirbsd.org>
+Date: Sat, 1 Dec 2018 12:35:06 +0100
+Subject: [PATCH] Declare package non-GNU.
+
+Add the foreign option to AM_INIT_AUTOMAKE in configure.ac.
+This will tell autotools that you are not following GNU coding
+standards, and Automake will not create the usual GNU project
+text files, including the AUTHORS, COPYING, INSTALL, NEWS,
+README, and ChangeLog files. The automatic creation of these
+files is really fairly useless.
+
+Originated-by: fix_configure.patch
+Originated-md5: 7d6df66a1a42b20e87f3c79163b4c8bd
+Originated-URL: https://sources.debian.org/data/main/libd/libdsk/1.5.9+dfsg-1/debian/patches/fix_configure.patch
+
+Signed-off-by: Stephan Linz <linz@li-pro.net>
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index a7e396f..5d24613 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -7,7 +7,7 @@ AC_CONFIG_MACRO_DIR(m4)
+ AC_CANONICAL_SYSTEM
+ LT_INIT
+ AM_CONFIG_HEADER(config.h)
+-AM_INIT_AUTOMAKE
++AM_INIT_AUTOMAKE([foreign])
+ 
+ dnl Support for the Java Native Interface bindings
+ AC_ARG_WITH(jni,

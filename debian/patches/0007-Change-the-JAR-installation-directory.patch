@@ -1,0 +1,38 @@
+From bb77c45eceb45d74e14055e265d709b5a2beae7a Mon Sep 17 00:00:00 2001
+From: Jakub Bogusz <qboosh@pld-linux.org>
+Date: Fri, 17 Nov 2017 18:30:36 +0100
+Subject: [PATCH] Change the JAR installation directory
+
+On FreeBSD systems the location is '/usr/share/java',
+see: https://lintian.debian.org/tags/jar-not-in-usr-share.html
+
+On FreeBSD systems the location is '${LOCALBASE}/share/java',
+see: https://docs.freebsd.org/doc/12.1-RELEASE/usr/local/share/doc/freebsd/en/books/porters-handbook/using-java.html
+
+PLD - Polish(ed) / PLD Linux Distribution (https://www.pld-linux.org/)
+
+Originated-by: [PLD] libdsk-java.patch (libdsk-1.4.2.spec)
+Originated-md5: 110ef4d9cf39d45e51cff8186c1ee2a4
+Originated-URL: https://raw.githubusercontent.com/pld-linux/libdsk/01606e0/libdsk-java.patch
+
+Signed-off-by: Stephan Linz <linz@li-pro.net>
+---
+ lib/Makefile.am | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/lib/Makefile.am b/lib/Makefile.am
+index 04d9618..acc6a5c 100644
+--- a/lib/Makefile.am
++++ b/lib/Makefile.am
+@@ -113,7 +113,9 @@ $(HEADERPRE)_%.h:         $(CLASSDPRE)/%.class
+ 
+ $(srcdir)/dskjni.c:	$(JARHEADERS)
+ 
++javadir = /usr/share/java
++
+ install-exec-local:
+-	$(mkinstalldirs) $(libdir)
+-	if test x@LIBDSKJAR@ = x; then true; else $(INSTALL_DATA) @LIBDSKJAR@ $(DESTDIR)/$(libdir); fi
++	$(mkinstalldirs) $(DESTDIR)$(javadir)
++	if test x@LIBDSKJAR@ = x; then true; else $(INSTALL_DATA) @LIBDSKJAR@ $(DESTDIR)$(javadir); fi
+ 

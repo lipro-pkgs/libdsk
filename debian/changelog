@@ -1,3 +1,17 @@
+libdsk (1.5.12+dfsg-1cpm4l1) unstable; urgency=low
+
+  * New upstream version.
+  * debian/{watch,rules}: Add 'get-orig-source' target as strongly
+    recommended by Debian Policy Rule §4.9 and fix the uscan rules.
+  * debian/patches: Rebase all patches from branch 'cpm4l/libdsk-1.5.12'
+    as provided by: https://github.com/lipro-cpm4l/libdsk
+  * debian/{control,rules,libdsk4*}: Rename and upgrade to libdsk5.
+  * debian/{libdsk-utils}: Add binary for new utility dsklabel (get/set
+    label on DOS, CP/M or DFS media) and lsgotek (list the drive images
+    on a Gotek-format USB drive).
+
+ -- Stephan Linz <linz@li-pro.net>  Wed, 12 Feb 2020 19:34:28 +0100
+
 libdsk (1.5.9+dfsg-1cpm4l1) unstable; urgency=low
 
   * debian/control: Updated maintainer fields for CPM4L's github place.
